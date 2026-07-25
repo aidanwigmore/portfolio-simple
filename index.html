@@ -176,12 +176,12 @@
 		</div>
 
 		<div class="righttooltip">
-			<img alt="profile image" src="../istockphoto-816752606-612x612.jpg">
+			<img alt="profile image" src="../profile.jpg">
 			<button id="homeButton" type="button" class="icon">AidWig</button>
 			<span class="righttooltiptext" id="homePageLinkHint">Home Page</span>
 		</div>
 		<div class="octagon"></div>
-		<div class="lefttooltip"><button id="socialButton" type="button" class="icon">
+		<div class="lefttooltip"><button id="socialIconButton" type="button" class="icon">
 			<i class="fa-solid fa-link"></i>
 		</button>
 		<span class="lefttooltiptext" id="socialsLinkHint"></span>
@@ -203,7 +203,7 @@
 					<span class="lefttooltiptext">Checkout My Youtube Channel</span>
 				</div>
 			</div>
-			<div id="githubDiv" class="hidden">
+			<div id="githubIconButtonDiv" class="hidden">
 				<div class="lefttooltip">
 					<button id="gitHubButton" type="button" class="icon">
 						<i class="fa-brands fa-github"></i>	
@@ -217,11 +217,11 @@
 			const pageListState = { open: false };
 
 			function renderSocials() {
-				const socialButton = document.getElementById('socialButton');
+				const socialButton = document.getElementById('socialIconButton');
 				const homeButton = document.getElementById('homeButton');
-				const linkedInDiv = document.getElementById('linkedInDiv');
-				const youtubeDiv = document.getElementById('youtubeDiv');
-				const githubDiv = document.getElementById('githubDiv');
+				const linkedInDiv = document.getElementById('linkedInIconButtonDiv');
+				const youtubeDiv = document.getElementById('youtubeIconButtonDiv');
+				const githubDiv = document.getElementById('githubIconButtonDiv');
 				const socialsLinkHint = document.getElementById('socialsLinkHint');
 				const homeLinkHint = document.getElementById('righttooltiptext');
 				
@@ -248,12 +248,12 @@
 				});
 			}
 
-			socialButton.addEventListener("click", () => {
+			socialIconButton.addEventListener("click", () => {
 				socialExpandState.open = !socialExpandState.open;
 				if (socialExpandState.open) {
-					socialButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
+					socialIconButton.innerHTML = '<i class="fa-solid fa-xmark"></i>';
 				} else {
-					socialButton.innerHTML = '<i class="fa-solid fa-link"></i>';
+					socialIconButton.innerHTML = '<i class="fa-solid fa-link"></i>';
 				}
 				renderSocials();
 			});
