@@ -1,174 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>AidWig</title>
-	<script src="https://kit.fontawesome.com/23b7b13b6b.js" crossorigin="anonymous"></script>	
-	<script async src="//www.instagram.com/embed.js"></script>
-	<style>
-        body{
-			display: flex;
-			height: 100%;
-			flex-direction: column; 
-			justify-content: center;
-		}
-		.header {
-			width:100%;
-			justify-content: space-around;
-			display: inline-flex;
-			align-items: center;
-		}
-		.octagon {
-			width: 50%;
-			height: 100px;
-			background-color: #e74c3c;
-			clip-path: polygon(
-
-			20% 0%, 
-			80% 0%, 
-			100% 100%, 
-			0% 100%
-				);
-			}
-		.hidden {
-			display: none;
-		}
-		.rectangle {
-			display: flex;
-			flex-direction: row;
-			justify-content: space-between;
-			width: 100%;
-			background-color: #e74c3c;
-			clip-path: square(5% 20% 15% 10%);
-		}
-		.inline {
-			display: inline-block;
-		}
-		.lefttooltip {
-			position: relative;
-			display: inline-block;
-			border-bottom: 1px dotted black;
-			cursor: pointer;
-		}
-
-		.righttooltip {
-			position: relative;
-			display: inline-block;
-			border-bottom: 1px dotted black;
-			cursor: pointer;
-		}
-
-		.lefttooltiptext {
-			visibility: hidden;
-			width: 130px;
-			top: -5px;
-  			right: 105%;
-			background-color: black;
-			color: #ffffff;
-			text-align: center;
-			padding: 5px 0;
-			border-radius: 6px;
-			position: absolute;
-			z-index: 1;
-		}
-
-		.righttooltiptext {
-			visibility: hidden;
-			width: 130px;
-			top: -5px;
-  			left: 105%;
-			background-color: black;
-			color: #ffffff;
-			text-align: center;
-			padding: 5px 0;
-			border-radius: 6px;
-			position: absolute;
-			z-index: 1;
-		}
-
-		.lefttooltip:hover .lefttooltiptext {
-			visibility: visible;
-		}
-		.righttooltip:hover .righttooltiptext {
-			visibility: visible;
-		}
-		button {
-			border-radius: 12px;
-		}
-		.gallery-row {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr); /* 3 columns */
-			gap: 1rem;
-		}
-
-		.gallery-column {
-			width: 100%;
-			object-fit: cover;
-			display: block;
-		}
-
-		.fade-in {
-			animation: fadeIn 1s ease-in-out;
-		}
-
-		@keyframes slideIn {
-		from {
-			transform: translateX(-100px);
-			opacity: 0;
-		}
-		to {
-			transform: translateX(0);
-			opacity: 1;
-		}
-		}
-    </style>
+    <link rel="preconnect" href="https://kit.fontawesome.com">
+	<link rel="preconnect" href="https://www.instagram.com">
+	<link rel="stylesheet" href="./styles.css">
+	<script defer src="https://kit.fontawesome.com/23b7b13b6b.js" crossorigin="anonymous"></script>
+	<script defer src="https://www.instagram.com/embed.js"></script>
 </head>
 <body>
     <div class="header">
 		<div class="righttooltip">
-			<button id="pageListButton" type="button" class="icon">
-				<i class="fa-solid fa-bars"></i>
+			<button
+				id="pageListButton" 
+				type="button" 
+				class="blackBorderRadius icon primaryBackground boxShadow squareIcon"
+			>
+				<i 
+					id="pageListIcon"
+					class="fa-solid fa-bars secondaryColor"></i>
 			</button>
-			<span class="righttooltiptext" id="pageListLinkHint">View Page List</span>
-			<span class="righttooltiptext" id="projectLinkHint"></span>
+			<span id="projectLinkHint" class="righttooltiptext" ></span>
 			</div>
 			<div id="pageListIconGroup" class="fade-in">
 				<div id="projectsDiv" class="hidden">
 					<div class="righttooltip">
-						<button id="projectsIconButton" type="button" onClick="mainContentState.open=1;renderContent();" class="icon">
-							<i class="fa-solid fa-diagram-project"></i>				
+						<button 
+							id="projectsIconButton" 
+							type="button" 
+							onClick="mainContentState.open=1;renderContent();" 
+							class="icon tertBorderRadius secondaryBackground boxShadow squareIcon"
+						>
+							<i class="fa-solid fa-diagram-project primaryColor secondaryBackground"></i>				
 						</button>
 						<span class="righttooltiptext">View My Projects</span>
 					</div>
 				</div>
 				<div id="youtubeDiv" class="hidden">
 					<div class="righttooltip">
-						<button id="youTubeIconButton" type="button" onClick="mainContentState.open=2;renderContent();" class="icon">
-							<i class="fa-solid fa-briefcase"></i>	
+						<button 
+							id="youTubeIconButton" 
+							type="button" onClick="mainContentState.open=2;renderContent();" 
+							class="icon tertBorderRadius secondaryBackground boxShadow squareIcon"
+						>
+							<i class="fa-solid fa-briefcase primaryColor secondaryBackground"></i>	
 						</button>
 						<span class="righttooltiptext">View My Work Experience</span>
 					</div>
 				</div>
 				<div id="televisionDiv" class="hidden">
 					<div class="righttooltip">
-						<button id="televisionButton" type="button" onClick="mainContentState.open=3;renderContent();" class="icon">
-							<i class="fa-solid fa-tv"></i>	
+						<button 
+							id="televisionButton" 
+							type="button" 
+							onClick="mainContentState.open=3;renderContent();" 
+							class="icon tertBorderRadius secondaryBackground boxShadow squareIcon"
+						>
+							<i class="fa-solid fa-tv primaryColor secondaryBackground" ></i>	
 						</button>
 						<span class="righttooltiptext">View My Television Experience</span>
 					</div>
 				</div>
 				<div id="photoGalleryDiv" class="hidden">
 					<div class="righttooltip">
-						<button id="cameraIconButton" type="button" onClick="mainContentState.open=4; renderContent();" class="icon">
-							<i class="fa-solid fa-camera"></i>	
+						<button 
+							id="cameraIconButton" 
+							type="button" 
+							onClick="mainContentState.open=4; renderContent();" 
+							class="icon tertBorderRadius secondaryBackground boxShadow squareIcon"
+						>
+							<i class="fa-solid fa-camera primaryColor secondaryBackground"></i>	
 						</button>
 						<span class="righttooltiptext">View My Photo Gallery</span>
 					</div>
 				</div>
 				<div id="videoGalleryDiv" class="hidden">
 					<div class="righttooltip">
-						<button id="photoIconButton" type="button" onClick="mainContentState.open=5;renderContent();" class="icon">
-							<i class="fa-solid fa-video"></i>	
+						<button 
+							id="photoIconButton" 
+							type="button" 
+							onClick="mainContentState.open=5;renderContent();" 
+							class="icon tertBorderRadius secondaryBackground boxShadow squareIcon"
+						>
+							<i class="fa-solid fa-video primaryColor secondaryBackground"></i>	
 						</button>
 						<span class="righttooltiptext">View My Video Gallery</span>
 					</div>
@@ -176,36 +89,59 @@
 		</div>
 
 		<div class="righttooltip">
-			<button id="homeButton" type="button" class="icon">AidWig</button>
-			<span class="righttooltiptext" id="homePageLinkHint">Home Page</span>
+			<button 
+				id="homeButton" 
+				type="button" 
+				class="icon secondaryBackground primaryColor blackBorderRadius boxShadow squareIcon"
+			>
+				AidWig
+			</button>
+			<span id="homePageLinkHint" class="righttooltiptext">Home Page</span>
 		</div>
-		<div class="octagon"></div>
-		<div class="lefttooltip"><button id="socialIconButton" type="button" class="icon">
-			<i class="fa-solid fa-link"></i>
-		</button>
-		<span class="lefttooltiptext" id="socialsLinkHint"></span>
+		<div class="octagon hexagonBackground borderRadius"></div>
+		<div class="lefttooltip">
+			<button 
+				id="socialIconButton" 
+				type="button" 
+				class="icon blackBorderRadius primaryBackground boxShadow squareIcon"
+			>
+				<i class="fa-solid fa-link secondaryColor"></i>
+			</button>
+			<span id="socialsLinkHint" class="lefttooltiptext" ></span>
 		</div>
 		<div id="socialIconGroup" class="fade-in">
 			<div id="linkedInIconButtonDiv" class="hidden">
 				<div class="lefttooltip">
-					<button id="linkedInButton" type="button" class="icon">
-						<i class="fa-brands fa-linkedin"></i>				
+					<button 
+						id="linkedInButton" 
+						type="button" 
+						class="icon tertBorderRadius secondaryBackground boxShadow squareIcon"
+					>
+						<i class="fa-brands fa-linkedin primaryColor secondaryBackground"></i>				
 					</button>
 					<span class="lefttooltiptext">Peruse My LinkedIn</span>
 				</div>
 			</div>
 			<div id="youtubeIconButtonDiv" class="hidden">
 				<div class="lefttooltip">
-					<button id="youTubeButton" type="button" class="icon">
-						<i class="fa-brands fa-youtube"></i>	
+					<button 
+						id="youTubeButton" 
+						type="button" 
+						class="icon tertBorderRadius secondaryBackground boxShadow squareIcon"
+					>
+						<i class="fa-brands fa-youtube primaryColor secondaryBackground"></i>	
 					</button>
 					<span class="lefttooltiptext">Checkout My Youtube Channel</span>
 				</div>
 			</div>
 			<div id="githubIconButtonDiv" class="hidden">
 				<div class="lefttooltip">
-					<button id="gitHubButton" type="button" class="icon">
-						<i class="fa-brands fa-github"></i>	
+					<button 
+						id="gitHubButton" 
+						type="button" 
+						class="icon tertBorderRadius secondaryBackground boxShadow squareIcon"
+					>
+						<i class="fa-brands fa-github primaryColor secondaryBackground"></i>	
 					</button>
 					<span class="lefttooltiptext">Access My Github</span>
 				</div>
@@ -276,23 +212,38 @@
 			renderPageList();
 		</script>
 	</div>
-	<div class="rectangle">
+	<div class="rectangle hexagonBackground boxShadow borderRadius">
 		<div>
-			<button id="leftButton" type="button" class="icon">
-				<i class="fa-solid fa-angle-left"></i>	
+			<button 
+				id="leftButton" 
+				type="button" 
+				class="icon blackBorderRadius primaryColor secondaryBackground squareIcon"
+			>
+				<i class="fa-solid fa-angle-left primaryColor secondaryBackground"></i>	
 			</button>
 		</div>
-		<div>
-			<p id="mainContent" style="text-align: center;font-weight: bold;white-space: pre-line;">Welcome!
-			</p>
+		<div class="primaryBackground padding2 blackBorderRadius borderRadius">
+			<h1 
+				id="mainContent" 
+				style="text-align: center; font-weight: bold; text-decoration: underline; white-space: pre-line;"
+			>
+				Welcome!
+			</h1>
+			<hr/>
 			<p id="subContent" style="white-space: pre-line;"></p>
-			<!-- <div id="subContentMainContent" style="font-weight: normal;white-space: pre-line;">
-			</div> -->
-			<div id="subContentMainContent" style="font-weight: normal;white-space: pre-line;"></div>
+			<hr class="halfWidth"/>
+			<div 
+				id="subContentMainContent" 
+				style="font-weight: normal;white-space: pre-line;"
+			></div>
 		</div>	
 		<div>
-			<button id="rightButton" type="button" class="icon">
-				<i class="fa-solid fa-angle-right"></i>	
+			<button 
+				id="rightButton" 
+				type="button" 
+				class="icon blackBorderRadius primaryColor secondaryBackground squareIcon"
+			>
+				<i class="fa-solid fa-angle-right primaryColor secondaryBackground"></i>	
 			</button>
 		</div>
 		
@@ -313,16 +264,16 @@
 			switch(mainContentState.open) {
 				case 0:
 					mainContent.textContent = "Welcome!";
-					subContent.textContent = "...to my home page. \n\nThe purpose of this website is for you to see my hobbies & interests, and serve as a free portfolio for my work.\n\n"
+					subContent.textContent = "...to my home page. \n\nThis website is for you to see my interests, and serve as a free portfolio for my work.\n\n"
 					+" My name is Aidan Wigmore, and I don't define myself by my work titles (on my home-page at least), but rather by my passions and interests.\n\n"
-					+"I have a diploma in software development, and a passion for video production and photography. I hope you enjoy your time here, while learning about me!\n\n";
-					subContentMainContent.innerHTML = `<img alt="profile image" src="../profile.jpg">\n\n-Aidan`;
-					leftButton.textContent = "Video Gallery";
+					+"I have a diploma in software development, and a passion for video production and photography. I hope you enjoy your time here, while learning about me!\n\n-Aidan";
+					subContentMainContent.innerHTML = `<img loading="lazy" decoding="async" alt="profile image" src="../profile.jpg" style="max-height: 50vh; border-radius: 45%;">`;
+					leftButton.textContent = "Videos";
 					rightButton.textContent = "Projects";
 					break;
 				case 1:
 					mainContent.textContent = "Software Projects";
-					subContent.textContent = "This is the project page"
+					subContent.textContent = "This is my project page."
 					subContentMainContent.innerHTML = `
 					<ul>
 						<li><b>Personal Project</b> | IdeaBurn | Jan 2025 - Mar 2025
@@ -333,6 +284,7 @@
 								<li>Structured project architecture, database models, and environment configuration.</li>	
 							</ul>	
 						</li>
+						<hr class="halfWidth"/>
 						<li><b>Capstone Project</b> | TeaBank | Sep 2024 - Jan 2025
 							<ul>
 								<li>Developed a full stack web application using Django and PostgreSQL/SQLite.</li>
@@ -341,6 +293,7 @@
 								<li>Designed relational database schemas and REST endpoints.</li>	
 							</ul>		
 						</li>
+						<hr class="halfWidth"/>
 						<li><b>Software Eng. Project</b> | <b>Mohawk College</b> | Jan 2024 - Apr 2024
 							<ul>
 								<li>Partnered with an HVAC company to digitize invoice workflows.</li>
@@ -367,6 +320,7 @@
 									<li>Produced 40+ structured instructional videos, strengthening production workflow awareness, scripting, recording, and post-production processes.</li>
 								</ul>	
 							</li>
+							<hr class="halfWidth"/>
 							<li><b>Learning Technology Support Assistant</b> | Jan 2022 - Apr 2022 \n <b>Mohawk College</b> | Hamilton, Ontario
 								<ul>
 									<li>Maintained AV equipment including microphones, displays, cameras, and peripheral devices.</li>
@@ -375,6 +329,7 @@
 									<li>Assisted in setup and troubleshooting of classroom technology environments.</li>	
 								</ul>	
 							</li>
+							<hr class="halfWidth"/>
 						</ul>
 						<ul>
 							<li><b>Delivery Team Member, Barista</b> | Sep 2020 - Feb 2026 \n <b>MRKTBox Inc.</b> | Hamilton, Ontario
@@ -389,7 +344,7 @@
 						</ul>
 					`;
 					leftButton.textContent = "Projects";
-					rightButton.textContent = "Television Experience";
+					rightButton.textContent = "TV Experience";
 					break;
 				case 3:
 					mainContent.textContent = "Television Experience";
@@ -402,6 +357,7 @@
 								<li>Responsible for taking attendance and aiding in locating late crew.</li>	
 							</ul>	
 						</li>
+						<hr class="halfWidth"/>
 						<li><b>Production Assistant Driver</b> | Apr 2026 - May 2026 \n <b>BBC x Insight Productions</b> | Nation's Dumbest
 							<ul>
 								<li>Transport talent, craft, and production materials in a timely manner.</li>
@@ -411,6 +367,7 @@
 								<li>Assisted with other departments as needed.</li>
 							</ul>	
 						</li>
+						<hr class="halfWidth"/>
 						<li><b>Production Assistant</b> | Jan 2026 - Apr 2026 \n <b>Big Coat Media Productions</b> | Love It Or List It
 							<ul>
 								<li>Distributed production materials within a residential filming zone.</li>
@@ -419,36 +376,32 @@
 						</li>
 						</ul>`;
 					leftButton.textContent = "Work Experience";
-					rightButton.textContent = "Photo Gallery";
+					rightButton.textContent = "Photos";
 					break;
 				case 4:
 					mainContent.textContent = "Photo Gallery";
-					subContent.textContent = "This is my photo gallery page.\n\n"
-					+"Here are some of my favourite photos I've taken over the years.\n\n";
+					subContent.textContent = "This page contains my contract and personal photography.\n\n";
 					subContentMainContent.innerHTML = `
+					<b>Here's a slideshow of my freelance photography work:</b>
+					<iframe loading="lazy" decoding="async" src="https://docs.google.com/presentation/d/e/2PACX-1vTDer83cDLetqL3fpWzySer6zNBC6L14_IuXWbzgNk9UolPFojywxvNOmMRztS-wCvfHvwQlFSl6_LZ/pubembed?start=true&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+					<hr class="halfWidth"/>
+					<b>My main camera is a Nikon D5200, but I also use:</b>
 					<ul>
-						<li class="gallery-column">
-							<p><b>Datsun 510, Beetle & Unknown.</b> | Abandoned</p>
-							<img alt="profile image" src="../cars.jpg" style="width: 50vw">
-						</li>
-						
-						<li class="gallery-column">
-							<p><b>Blue Jays</b> | Silent Lake Provincial Park</p>
-							<img alt="profile image" src="../row5.jpg" style="width: 50vw">
-						</li>
-						
-						<li class="gallery-column">
-							<p><b>Snowy Teasel, Branches, Under The Powerline</b> | Hamilton, Ontario</p>
-							<img alt="profile image" src="../row13.jpg" style="width: 50vw">
-						</li>
-
-						
-					</ul>`;
-					leftButton.textContent = "Television Experience";
-					rightButton.textContent = "Video Gallery";
+						<li>Iphone 14</li>
+						<li>Nikon F</li>
+						<li>Nikon FE</li>
+						<li>Instax Mini Evo</li>
+						<li>Paper Shoot</li>	
+					<u/>
+					<hr class="halfWidth"/>
+					<b>Here's a slideshow of my best photography work:</b>
+					<iframe loading="lazy" decoding="async" src="https://docs.google.com/presentation/d/e/2PACX-1vSCfBsc-TmlZRLt9Fgnqyb0ibNJsHywTPsCXDWZB3HAjbvlUw2PbhM4y9JO_cmHmYPXHGxn1V6NQlAz/pubembed?start=true&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+					`;
+					leftButton.textContent = "TV Experience";
+					rightButton.textContent = "Videos";
 					break;
 				case 5:
-					mainContent.textContent = "Video Gallery";
+					mainContent.textContent = "Video  Gallery";
 					subContent.textContent = "This is my video gallery page. \n\n"
 					subContentMainContent.innerHTML = `<ul>
 						<li>Batched Support
@@ -530,8 +483,41 @@
 								</li>
 							</ul>
 						</li>
+						<hr class="halfWidth"/>
+						<li>AidFilming
+							<a href="https://www.youtube.com/@AidWigFilming" target="_blank">
+								<button type="button">View YouTube Channel</button>
+							</a>
+							<ul class="gallery-row">
+								<li class="gallery-column">
+									<a href="https://www.youtube.com/watch?v=80yY2lNZl1M&list=PLh17cpqc5tdUVcCBjewvJdcxFAhL-eB8p&pp=sAgC" target="_blank">
+										<button type="button">
+											<p>
+												Mobile Web Development Demonstrations
+											</p>
+											<p>
+												<b>7 Feb 2023-22 Feb 2023</b> | Playlist
+											</p>
+										</button>
+									</a>	
+								</li>
+								<li class="gallery-column">
+									<a href="https://www.youtube.com/watch?v=XS7T578pJrw&list=PLh17cpqc5tdWh_b2x-6Am0r08BeYy0H2g&pp=sAgC" target="_blank">
+										<button type="button">
+											<p>
+												Advanced PHP Videos
+											</p>
+											<iframe src="https://docs.google.com/presentation/d/e/2PACX-1vTwd5mnDcgJtIZuXK_i4U_WukHSVsE6Ssfx8xvCVdvALt_dZ2uDXmYrVP30OdCRpmM_6tJRlWRReA2T/pubembed?start=false&loop=false&delayms=3000" frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+											<p>
+												<b>2 Oct 2024</b> | 0:37
+											</p>
+										</button>
+									</a>	
+								</li>
+							<ul/>
+						</li>
 						</ul>`;
-						leftButton.textContent = "Photo Gallery";
+						leftButton.textContent = "Photos";
 						rightButton.textContent = "Home";
 					break;
 			}
