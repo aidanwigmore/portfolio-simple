@@ -79,7 +79,7 @@ body::before {
         );
     margin-top: auto;
 
-    background-image: url("./hexagon-pattern.jpg");
+    background-image: url("../hexagon-pattern.jpg");
     background-repeat: repeat;
     background-position: center;
 }
@@ -91,7 +91,7 @@ body::before {
     clip-path: square(5% 20% 15% 10%);
     overflow-y: auto;
     overflow-x: hidden;
-    background-image: url("./hexagon-pattern.jpg");
+    background-image: url("../hexagon-pattern.jpg");
     background-repeat: repeat;
     background-position: center;
     min-width: 67%;
