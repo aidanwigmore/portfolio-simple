@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #f4f4f4;
+    font-family: sans-serif;
+  }
+ 
+.card {
+    position: relative;
+    padding: 8px;
+    background: linear-gradient(
+      180deg,
+      #6633ff 0%,
+      #ff00cc 50%,
+      #6633ff 100%
+    );
+    animation: wave-flow 15s ease-in-out infinite;
+}
+
+.linked-in-card {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      #09C0C0 0%,
+      #0966c0 50%,
+      #0909C0 100%
+    );
+    animation: wave-flow 15s ease-in-out infinite;
+}
+
+.youtube-card {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      #fc00b0 0%,
+      #fc0031 50%,
+      #fc4c00 100%
+    );
+    animation: wave-flow 15s ease-in-out infinite;
+}
+
+.github-card {
+    position: relative;
+    background: linear-gradient(
+      180deg,
+      #010409 0%,
+      #208636 50%,
+      #adb0b5 100%
+    );
+    animation: wave-flow 15s ease-in-out infinite;
+}
+
+.card:hover, .linked-in-card:hover, .youtube-card:hover, .github-card:hover {
+    animation-play-state: paused;
+}
+ 
+.card::before .card::before, .linked-in-card::before, .youtube-card::before, .github-card::before {
+    content: "";
+    position: absolute;
+    inset: -12px;
+    border-radius: 26px;
+    background: inherit;
+    background-size: inherit;
+    animation: inherit;
+    filter: blur(20px);
+    opacity: 0.7;
+    z-index: -1;
+}
+
+.card-inner {
+    border-radius: 14px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ 
+@keyframes wave-flow {
+    0%   { background-position: 0% 0%; }
+    50%  { background-position: 100% 100%; }
+    100% { background-position: 0% 0%; }
+}

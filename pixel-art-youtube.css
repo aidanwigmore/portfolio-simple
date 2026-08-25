@@ -1,0 +1,85 @@
+/* 
+red: #ed1b24
+white: #ffffff
+*/
+
+
+.pixel-youtube {
+ width: 1em;
+ height: 1em;
+ box-shadow:
+    /*__horizontal to right__em    __vertical from top__em*/
+    3em 3em #ffffff,
+    4em 3em #ffffff,
+    
+    3em 4em #ffffff,
+    4em 4em #ffffff,
+    5em 4em #ffffff,
+    6em 4em #ffffff,
+    
+    3em 5em #ffffff,
+    4em 5em #ffffff,
+    5em 5em #ffffff,
+    6em 5em #ffffff,
+    7em 5em #ffffff,
+
+    3em 6em #ffffff,
+    4em 6em #ffffff,
+    5em 6em #ffffff,
+    6em 6em #ffffff,
+    7em 6em #ffffff,
+    8em 6em #ffffff,
+    9em 6em #ffffff,
+    
+    3em 7em #ffffff,
+    4em 7em #ffffff,
+    5em 7em #ffffff,
+    6em 7em #ffffff,
+    7em 7em #ffffff,
+    8em 7em #ffffff,
+    9em 7em #ffffff,
+    10em 7em #ffffff,
+
+    3em 8em #ffffff,
+    4em 8em #ffffff,
+    5em 8em #ffffff,
+    6em 8em #ffffff,
+    7em 8em #ffffff,
+    8em 8em #ffffff,
+    9em 8em #ffffff,
+    10em 8em #ffffff,
+    11em 8em #ffffff,
+    
+    3em 9em #ffffff,
+    4em 9em #ffffff,
+    5em 9em #ffffff,
+    6em 9em #ffffff,
+    7em 9em #ffffff,
+    8em 9em #ffffff,
+    9em 9em #ffffff,
+    10em 9em #ffffff,
+    
+    3em 10em #ffffff,
+    4em 10em #ffffff,
+    5em 10em #ffffff,
+    6em 10em #ffffff,
+    7em 10em #ffffff,
+    8em 10em #ffffff,
+    9em 10em #ffffff,
+    
+    3em 11em #ffffff,
+    4em 11em #ffffff,
+    5em 11em #ffffff,
+    6em 11em #ffffff,
+    7em 11em #ffffff,
+    
+    3em 12em #ffffff,
+    4em 12em #ffffff,
+    5em 12em #ffffff,
+    6em 12em #ffffff,
+    
+    3em 13em #ffffff,
+    4em 13em #ffffff
+
+    ;
+}

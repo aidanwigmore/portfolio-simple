@@ -2,6 +2,7 @@ body{
     display: flex;
     flex-direction: column; 
     justify-content: center;
+    zoom: 90%;
 }
 
 body::before {
@@ -24,16 +25,6 @@ body::before {
 
 .primaryBackground {
     background-color: white;
-}
-
-.hexagonBackground {
-    background-image: url("./hexagon-pattern.jpg");
-    background-repeat: repeat;
-    background-position: center;
-}
-
-.boxShadow {
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
 
 .secondaryColor {
@@ -60,20 +51,21 @@ body::before {
     border: 4px solid black;
 }
 
-.blackBorderRadius:hover {
-    border: 4px solid white;
-}
-
 .borderRadius {
     border-radius: 15px;
 }
 
 .header {
     width:100%;
-    justify-content: space-around;
     display: inline-flex;
+    justify-content: center;
     align-items: center;
 }
+
+.hidden {
+    display: none;
+}
+
 .octagon {
     width: 50%;
     height: 100px;
@@ -85,74 +77,34 @@ body::before {
     100% 100%, 
     0% 100%
         );
-    }
+    margin-top: auto;
 
-.hidden {
-    display: none;
+    background-image: url("./hexagon-pattern.jpg");
+    background-repeat: repeat;
+    background-position: center;
 }
+
 .rectangle {
     display: flex;
     flex-direction: row;
     justify-content: center;
-    background-color: #e74c3c;
     clip-path: square(5% 20% 15% 10%);
     overflow-y: auto;
     overflow-x: hidden;
+    background-image: url("./hexagon-pattern.jpg");
+    background-repeat: repeat;
+    background-position: center;
+    min-width: 67%;
 }
 .inline {
     display: inline-block;
 }
-.lefttooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-    cursor: pointer;
-}
 
-.righttooltip {
-    position: relative;
-    display: inline-block;
-    border-bottom: 1px dotted black;
-    cursor: pointer;
-}
-
-.lefttooltiptext {
-    visibility: hidden;
-    width: 130px;
-    top: -5px;
-    right: 105%;
-    background-color: black;
-    color: #ffffff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-}
-
-.righttooltiptext {
-    visibility: hidden;
-    width: 130px;
-    top: -5px;
-    left: 105%;
-    background-color: black;
-    color: #ffffff;
-    text-align: center;
-    padding: 5px 0;
-    border-radius: 6px;
-    position: absolute;
-    z-index: 1;
-}
-
-.lefttooltip:hover .lefttooltiptext {
-    visibility: visible;
-}
-.righttooltip:hover .righttooltiptext {
-    visibility: visible;
-}
 button {
     border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
 }
+
 .gallery-row {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 columns */
@@ -163,10 +115,6 @@ button {
     object-fit: cover;
     display: block;
     border-radius: 12px;
-}
-
-.fade-in {
-    animation: fadeIn 1s ease-in-out;
 }
 
 @keyframes slideIn {
@@ -180,14 +128,17 @@ to {
 }
 }
 
-.squareIcon {
-    padding: 0.5rem;
-}
-
 .padding2 {
     padding: 2rem;
 }
 
 .halfWidth {
     margin-right: 30%;
+}
+
+.pixelify-sans {
+  font-family: "Pixelify Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
 }
