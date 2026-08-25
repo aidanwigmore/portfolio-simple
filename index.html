@@ -108,7 +108,7 @@
 		const projectState = { open: 0 };
 
 		async function loadPage(name) {
-			const res = await fetch(`./pages/${name}.html`);
+			const res = await fetch(`./${name}.html`);
 			document.getElementById('subContentMainContent').innerHTML = await res.text();
 		}
 
