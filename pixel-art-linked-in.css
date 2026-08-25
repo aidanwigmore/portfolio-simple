@@ -1,0 +1,74 @@
+/* 
+blue: #00b7f0
+white: #ffffff
+*/
+
+
+.pixel-linked-in {
+ width: 1em;
+ height: 1em;
+ box-shadow:
+    4em 3em #ffffff,
+    5em 3em #ffffff,
+
+    4em 4em #ffffff,
+    5em 4em #ffffff,
+    4em 6em #ffffff,
+    5em 6em #ffffff,
+    8em 6em #ffffff,
+    9em 6em #ffffff,
+    11em 6em #ffffff,
+    12em 6em #ffffff,
+    
+    4em 7em #ffffff,
+    5em 7em #ffffff,
+    8em 7em #ffffff,
+    9em 7em #ffffff,
+    11em 7em #ffffff,
+    12em 7em #ffffff,
+    13em 7em #ffffff,
+    
+    4em 8em #ffffff,
+    5em 8em #ffffff,
+    8em 8em #ffffff,
+    9em 8em #ffffff,
+    10em 8em #ffffff,
+    13em 8em #ffffff,
+    14em 8em #ffffff,
+    
+    4em 9em #ffffff,
+    5em 9em #ffffff,
+    8em 9em #ffffff,
+    9em 9em #ffffff,
+    13em 9em #ffffff,
+    14em 9em #ffffff,
+    
+    4em 10em #ffffff,
+    5em 10em #ffffff,
+    8em 10em #ffffff,
+    9em 10em #ffffff,
+    13em 10em #ffffff,
+    14em 10em #ffffff,
+    
+    4em 11em #ffffff,
+    5em 11em #ffffff,
+    8em 11em #ffffff,
+    9em 11em #ffffff,
+    13em 11em #ffffff,
+    14em 11em #ffffff,
+    
+    4em 12em #ffffff,
+    5em 12em #ffffff,
+    8em 12em #ffffff,
+    9em 12em #ffffff,
+    13em 12em #ffffff,
+    14em 12em #ffffff,
+    
+    4em 13em #ffffff,
+    5em 13em #ffffff,
+    8em 13em #ffffff,
+    9em 13em #ffffff,
+    13em 13em #ffffff,
+    14em 13em #ffffff;
+    
+}
