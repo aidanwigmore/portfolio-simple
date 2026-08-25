@@ -1,0 +1,143 @@
+<div class="pixel-container" style="margin: auto; display: block;">
+    <div class ="pixel"></div>
+</div><p style="line-height: 1.5; text-align: center;">
+    This website is for you to see my interests, and serve as a free portfolio for my work.
+	I have a diploma in software development, and a passion for video production and photography. 
+    I hope you enjoy your time here, while learning about me!
+    -Aidan
+</p>
+
+<hr class="halfWidth"/>
+
+<div style="display: flex; flex-direction: column; justify-content: space-evenly; align-items: center; flex-wrap: wrap;">
+    <b>How to navigate this site:</b>
+    <ul>
+        <li>From any page, you can navigate to the home page by clicking the below button, found
+            at the top of the page:
+            <button 
+                id="homeButton" 
+                type="button"
+                class="secondaryBackground blackBorderRadius card"
+            >
+                <b class="primaryColor">AidWig</b>
+            </button>
+        </li>
+        <li>Navigate between pages by using the left and right keys.</li>
+        <li>From this page, you can navigate to other pages by clicking from the below options:
+        </li>
+    </ul>
+</div>
+
+<div style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; flex-wrap: wrap;">
+    <div id="projectsDiv">
+        <button 
+            id="projectsIconButton" 
+            type="button" 
+            onClick="mainContentState.open=1;renderContent();" 
+            class="secondaryBackground blackBorderRadius card"
+        >
+            <div class="card-inner">
+                <b class="primaryColor">Projects Page</b>
+            </div>
+        </button>
+    </div>
+    <div id="youtubeDiv">
+        <button 
+            id="youTubeIconButton" 
+            type="button" onClick="mainContentState.open=2;renderContent();" 
+            class="blackBorderRadius secondaryBackground card"
+        >
+            <div class="card-inner">
+                <b class="primaryColor">Work Page</b>
+            </div>
+        </button>
+    </div>
+    <div id="photoGalleryDiv">
+        <button 
+            id="cameraIconButton" 
+            type="button" 
+            onClick="mainContentState.open=3; renderContent();" 
+            class="blackBorderRadius secondaryBackground card"
+        >
+            <div class="card-inner">
+                <b class="primaryColor">Gallery</b>
+            </div>
+        </button>
+    </div>
+</div>
+
+<b>Socials:</b>
+<div style="display: flex; flex-direction: row; justify-content: space-evenly; align-items: center; flex-wrap: wrap;">
+    <div id="linkedInIconButtonDiv">
+        <a
+            href="https://www.linkedin.com/in/aidan-wigmore/"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <button 
+                id="linkedInButton" 
+                type="button" 
+                class="primaryBorderRadius secondaryBackground linked-in-card"
+            >
+                <div class="card-inner">
+                    <div class="pixel-container" style="margin: auto; display: block;">
+                        <div class ="pixel-linked-in"></div>
+                    </div>
+                    <div class="primaryColor">
+                        Connect with me
+                        on LinkedIn.
+                    </div>
+                    <b class="primaryColor">LinkedIn</b>
+                </div>
+            </button>
+        </a>
+    </div>
+    <div id="youtubeIconButtonDiv">
+        <a
+            href="https://www.youtube.com/@AidWigFilming"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <button 
+                id="youTubeButton" 
+                type="button" 
+                class="primaryBorderRadius secondaryBackground youtube-card"
+            >
+                <div class="card-inner">
+                    <div class="pixel-container">
+                        <div class ="pixel-youtube"></div>
+                    </div>
+                    <div class="primaryColor">
+                        Watch my Youtube 
+                        videos or playlists. 
+                    </div>
+                    <b class="primaryColor">Youtube</b>
+                </div>
+            </button>
+        </a>
+    </div>
+    <div id="githubIconButtonDiv">
+        <a
+            href="https://github.com/aidanwigmore"
+            target="_blank"
+            rel="noopener noreferrer"
+        >
+            <button 
+                id="gitHubButton" 
+                type="button" 
+                class="primaryBorderRadius secondaryBackground github-card"
+            >
+                <div class="card-inner">
+                    <div class="pixel-container" style="margin: auto; display: block;">
+                        <div class ="pixel-github"></div>
+                    </div>
+                    <div class="primaryColor">
+                        See my code 
+                        on Github.
+                    </div>
+                    <b class="primaryColor">GitHub</b>
+                </div>
+            </button>
+        </a>
+    </div>
+</div>
